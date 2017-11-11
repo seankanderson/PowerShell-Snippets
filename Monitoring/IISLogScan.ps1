@@ -3,7 +3,7 @@
 	
 	Point this script at an IIS log file and it will count the number of requests that exceed a certain response time in milliseconds.
 	
-	I used a variation of this script as a poor man's application monitoring script to warn the team when certain critical APIs were not 
+	I used a variation of this script as a poor man's application monitoring tool to warn the team when certain critical APIs were not 
 	responding to requests fast enough.  In this example I have 3875 (milliseconds, or 3.875 seconds) hard coded.  
 	
 	You could re-work this to accept parameters and run on intervals to send an email or text message if an API/website is running slow.  
