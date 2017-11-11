@@ -9,3 +9,7 @@ This script handles deploying mission critical console applications (jobs) that 
 staging-deploy.ps1
 ---------------
 This script will take an IIS site name and a build path and perform the steps nessesary to deploy an application.  If a test url is supplied by the user the script tests the site and displays an ASCII squirrel if a 200 is response is returned.  I used to call this from master script on each server for every site that was getting deployed.  It outputs a nice log file so that the entire deployment process is documented.
+
+production-deploy.ps1
+---------------
+We maintained a staging site and a prod site on each IIS server.  After deploying to staging and verifying the application I would call this script to swap the existing prod and staging paths in the IIS configuration.  We marked the prod and staging paths in the file system with a file called zz_PRODUCTION.txt or zz_STAGING.txt (not my invention) so that admins would know which files were being served in each site when browing the file system.  This script handles placement of those files in the correct order.
