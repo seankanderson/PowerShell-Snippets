@@ -6,3 +6,6 @@ job-deploy.ps1
 ---------------
 This script handles deploying mission critical console applications (jobs) that are run from Windows Task Scheduler.  Jobs were run 24/7 on various schedules so we had to be careful about deploying binaries or ending tasks when a particular job was running.  This script will end a task or wait for it to complete, disable the task, copy the new binaries, and then ren-enable the task.
 
+staging-deploy.ps1
+---------------
+This script will take an IIS site name and a build path and perform the steps nessesary to deploy an application.  If a test url is supplied by the user the script tests the site and displays an ASCII squirrel if a 200 is response is returned.  I used to call this from master script on each server for every site that was getting deployed.  It outputs a nice log file so that the entire deployment process is documented.
