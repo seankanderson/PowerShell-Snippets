@@ -28,7 +28,12 @@ Install-Module -Name EWS
 
 #>
 
-#Connect-EWSService wraps [Microsoft.Exchange.WebServices.Data.ExchangeService]
+<# 
+    Connect-EWSService wraps [Microsoft.Exchange.WebServices.Data.ExchangeService]
+    Visit https://testconnectivity.microsoft.com/ to get your ServiceUrl from the Autodiscover connectivity test.
+    When I tried to use autodiscover it completed successfully but comdlets generated exceptions becasue the 
+    service URL that it returned was not fully qualified.
+#>
 $service = $(Connect-EWSService -Mailbox sean.anderson@datavirtue.com `
                                 -ServiceUrl https://outlook.office365.com/EWS/Exchange.asmx `
                                 -Credential sean.anderson@datavirtue.com)
